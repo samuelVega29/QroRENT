@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{Layout/layout}"
+      lang="es">
+
+<head>
+  <title>Tu hogar espera</title>
+</head>
+
+<body>
+
+<main layout:fragment="content">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>¡Tu hogar<br>espera!</h1>
+      <p>¿Qué estás esperando?</p>
+      <a th:href="@{/#servicios}" class="btn-hero">¡Renta ahora!</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-banner">
+    <h2>¡Hemos ayudado a miles de usuarios que su hogar sea realidad!</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="number">500k</span>
+        <span class="label">Inversiones</span>
+      </div>
+      <div class="stat-item">
+        <span class="number">2M</span>
+        <span class="label">StartUps<br/>seleccionados</span>
+      </div>
+      <div class="stat-item">
+        <span class="number">1.4M</span>
+        <span class="label">Mentorías</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIÉNES SOMOS -->
+  <section id="nosotros">
+    <div class="section-title">¿Quiénes somos?</div>
+    <div class="quienes-grid">
+      <div class="quienes-text">
+        <p>En <strong>QroRent</strong> somos una plataforma dedicada a conectar a personas con su hogar ideal en la ciudad de Querétaro. Creemos que encontrar donde vivir no debería ser complicado ni estresante.</p>
+        <p>Trabajamos con propietarios y arrendadores de confianza para ofrecerte opciones reales: casas, departamentos y cuartos que se adapten a tu estilo de vida y presupuesto.</p>
+        <p>Nuestra misión es simplificar el proceso de renta, darte la información que necesitas y acompañarte en cada paso hasta que encuentres el espacio que llamarás hogar.</p>
+      </div>
+      <div class="quienes-img">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Equipo QroRent"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="servicios">
+    <div class="section-title">Nuestros servicios</div>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-img">
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80" alt="Casas"/>
+        </div>
+        <div class="servicio-label">Casas</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-img">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Departamentos"/>
+        </div>
+        <div class="servicio-label">Departamentos</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-img">
+          <img src="https://images.unsplash.com/photo-1489171078254-c3365d6e359f?w=600&q=80" alt="Cerca a mí"/>
+        </div>
+        <div class="servicio-label">Cerca a mí</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section id="agenda">
+    <div class="section-title">Agenda tu cita</div>
+    <div class="agenda-inner">
+
+      <div class="calendar">
+        <div class="cal-header">
+          <button class="cal-nav" id="prevMonth">&#8249;</button>
+          <h3 id="calTitle"></h3>
+          <button class="cal-nav" id="nextMonth">&#8250;</button>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+
+      <div class="agenda-form">
+        <div class="agenda-block">
+          <h4>Detalles</h4>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Nombre</label>
+              <input type="text" placeholder="Tu nombre"/>
+            </div>
+            <div class="form-field">
+              <label>Teléfono</label>
+              <input type="tel" placeholder="442 000 0000"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Correo electrónico</label>
+              <input type="email" placeholder="correo@ejemplo.com"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Propiedad de interés</label>
+              <input type="text" placeholder="Dirección o nombre de la propiedad"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-block">
+          <h4>Requisitos</h4>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Tipo de inmueble</label>
+              <select>
+                <option>Casa</option>
+                <option>Departamento</option>
+                <option>Cuarto</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Presupuesto mensual</label>
+              <input type="text" placeholder="$0,000"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Notas adicionales</label>
+              <textarea placeholder="Cuéntanos más sobre lo que buscas…"></textarea>
+            </div>
+          </div>
+          <button class="btn-agenda">Confirmar cita</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<th:block layout:fragment="page-js">
+  <script th:src="@{/js/calendar.js}"></script>
+</th:block>
+
+</body>
+</html>

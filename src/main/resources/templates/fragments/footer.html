@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<body>
+
+<th:block th:fragment="footer">
+    <footer id="contacto">
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>📍 Querétaro, México</p>
+            <p>📞 (442) 000-0000</p>
+            <p>✉️ hola@qrorent.mx</p>
+            <p class="footer-hours">Lunes a Viernes<br/>9:00 am – 6:00 pm</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Ubícanos</h4>
+            <div class="footer-map">
+                <iframe
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-100.4300%2C20.5800%2C-100.3500%2C20.6400&layer=mapnik"
+                        title="Mapa Querétaro">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Nuestras Redes</h4>
+            <p class="footer-social-text">Síguenos y entérate de las últimas propiedades disponibles.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon fb">f</a>
+                <a href="#" class="social-icon tk">♪</a>
+                <a href="#" class="social-icon ig">◎</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        © 2025 QroRent · Todos los derechos reservados
+    </div>
+</th:block>
+
+</body>
+</html>
