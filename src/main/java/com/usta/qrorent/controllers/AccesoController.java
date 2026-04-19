@@ -87,4 +87,6 @@ public class AccesoController {
         session.invalidate();
         return "redirect:/login?logout";
     }
+
+    //prueba
 }
