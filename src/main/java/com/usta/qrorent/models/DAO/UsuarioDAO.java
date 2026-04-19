@@ -3,7 +3,6 @@ package com.usta.qrorent.models.DAO;
 import com.usta.qrorent.entities.UsuarioEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 public interface UsuarioDAO extends CrudRepository<UsuarioEntity, Long> {
