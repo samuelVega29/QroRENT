@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<body>
+
+<nav th:fragment="navbar">
+
+    <div class="nav-hamburger">
+        <span></span><span></span><span></span>
+    </div>
+
+    <a th:href="@{/}" class="nav-logo">Qro<span>Rent</span></a>
+
+    <ul class="nav-links">
+        <li>
+            <a th:href="@{/}">Busca hogar</a>
+        </li>
+        <li>
+            <a th:href="@{/#contacto}">Contáctanos</a>
+        </li>
+
+        <li th:if="${session.usuario == null}">
+            <a th:href="@{/registro}" class="btn-nav">Regístrate</a>
+        </li>
+        <li th:if="${session.usuario == null}">
+            <a th:href="@{/login}">Inicia sesión</a>
+        </li>
+
+        <li th:if="${session.usuario != null}">
+            <span class="nav-username">
+                Hola, <strong th:text="${session.usuario.nombre}">Usuario</strong>
+            </span>
+        </li>
+        <li th:if="${session.usuario != null}">
+            <a th:href="@{/logout}" class="btn-nav btn-logout">Cerrar sesión</a>
+        </li>
+    </ul>
+
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,654 @@
+/* ══════════════════════════════════════════════════════
+   QRORENT — styles.css
+   Sections:
+     1. Variables & Reset
+     2. Navbar
+     3. Hero
+     4. Stats Banner
+     5. Shared Section Styles
+     6. Quiénes Somos
+     7. Servicios
+     8. Agenda & Calendar
+     9. Footer
+    10. Animations
+══════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════
+   1. VARIABLES & RESET
+══════════════════════════════ */
+:root {
+    --navy:         #1a2e5a;
+    --navy-dark:    #111e3d;
+    --navy-mid:     #243d7a;
+    --accent:       #3b5bdb;
+    --accent-light: #e8edf8;
+    --white:        #ffffff;
+    --gray-100:     #f4f6fb;
+    --gray-200:     #e2e7f0;
+    --gray-400:     #9aa3b8;
+    --gray-600:     #5a6480;
+    --text:         #1a1a2e;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+
+/* ══════════════════════════════
+   2. NAVBAR
+══════════════════════════════ */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy-dark);
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+    height: 56px;
+    gap: 40px;
+}
+
+.nav-logo {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.nav-logo span {
+    color: #7ba7ff;
+}
+
+.nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.nav-hamburger span {
+    width: 20px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-left: auto;
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+.nav-links .btn-nav {
+    background: var(--accent);
+    color: var(--white);
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.nav-links .btn-nav:hover {
+    background: var(--navy-mid);
+}
+
+
+/* ══════════════════════════════
+   3. HERO
+══════════════════════════════ */
+.hero {
+    margin-top: 56px;
+    position: relative;
+    height: 480px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 0;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(to bottom, rgba(17, 30, 61, 0.55) 0%, rgba(17, 30, 61, 0.3) 40%, rgba(17, 30, 61, 0.7) 100%),
+            url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1400&q=80') center / cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 64px 64px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    padding: 13px 32px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(59, 91, 219, 0.5);
+}
+
+.btn-hero:hover {
+    background: #2d46c4;
+    transform: translateY(-2px);
+}
+
+
+/* ══════════════════════════════
+   4. STATS BANNER
+══════════════════════════════ */
+.stats-banner {
+    background: var(--navy);
+    padding: 40px 64px;
+    text-align: center;
+}
+
+.stats-banner h2 {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 32px;
+    font-style: italic;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.stat-item .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+}
+
+.stat-item .label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+    margin-top: 4px;
+    display: block;
+}
+
+
+/* ══════════════════════════════
+   5. SHARED SECTION STYLES
+══════════════════════════════ */
+section {
+    padding: 64px;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: var(--gray-200);
+}
+
+
+/* ══════════════════════════════
+   6. QUIÉNES SOMOS
+══════════════════════════════ */
+.quienes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.quienes-text {
+    grid-column: span 2;
+}
+
+.quienes-text p {
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.quienes-text p:last-child {
+    margin-bottom: 0;
+}
+
+.quienes-img {
+    background: var(--gray-200);
+    border-radius: 12px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.quienes-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* ══════════════════════════════
+   7. SERVICIOS
+══════════════════════════════ */
+.servicios {
+    background: var(--gray-100);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.servicio-card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(26, 46, 90, 0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+}
+
+.servicio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(26, 46, 90, 0.16);
+}
+
+.servicio-img {
+    height: 200px;
+    background: var(--gray-200);
+    overflow: hidden;
+}
+
+.servicio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.servicio-card:hover .servicio-img img {
+    transform: scale(1.05);
+}
+
+.servicio-label {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 20px;
+    text-align: center;
+}
+
+
+/* ══════════════════════════════
+   8. AGENDA & CALENDAR
+══════════════════════════════ */
+.agenda-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Calendar widget */
+.calendar {
+    background: var(--white);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 20px rgba(26, 46, 90, 0.07);
+}
+
+.cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.cal-header h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.cal-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--navy);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+
+.cal-nav:hover {
+    background: var(--accent-light);
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+}
+
+.cal-day-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gray-400);
+    padding: 4px 0 8px;
+}
+
+.cal-day {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--gray-600);
+    transition: background 0.15s, color 0.15s;
+}
+
+.cal-day:hover {
+    background: var(--accent-light);
+    color: var(--accent);
+}
+
+.cal-day.today    { background: var(--navy);   color: var(--white); }
+.cal-day.selected { background: var(--accent);  color: var(--white); }
+.cal-day.empty    { cursor: default; }
+
+/* Appointment form */
+.agenda-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.agenda-block {
+    background: var(--white);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 22px 26px;
+    box-shadow: 0 4px 16px rgba(26, 46, 90, 0.06);
+}
+
+.agenda-block h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid var(--gray-200);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.form-row:last-child {
+    margin-bottom: 0;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field.full {
+    grid-column: span 2;
+}
+
+.form-field label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    height: 38px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 13px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    background: var(--gray-100);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.form-field textarea {
+    height: 80px;
+    padding: 10px 12px;
+    resize: none;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--accent);
+    background: var(--white);
+}
+
+.btn-agenda {
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 6px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-agenda:hover  { background: var(--navy-mid); }
+.btn-agenda:active { transform: scale(0.98); }
+
+
+/* ══════════════════════════════
+   9. FOOTER
+══════════════════════════════ */
+footer {
+    background: var(--navy-dark);
+    padding: 48px 64px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+}
+
+.footer-col p,
+.footer-col a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    line-height: 2;
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: var(--white);
+}
+
+.footer-hours {
+    margin-top: 10px;
+    line-height: 1.7 !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    font-size: 12px !important;
+}
+
+.footer-social-text {
+    margin-bottom: 14px;
+}
+
+.footer-map {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    background: #2a3f6f;
+    margin-top: 8px;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(0.3) invert(0.85) hue-rotate(180deg);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--white);
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.social-icon.fb { background: #1877f2; }
+.social-icon.tk { background: #010101; }
+.social-icon.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.footer-bottom {
+    background: var(--navy-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 16px 64px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 12px;
+}
+
+
+/* ══════════════════════════════
+   10. ANIMATIONS
+══════════════════════════════ */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content h1 { animation: fadeUp 0.7s ease both; }
+.hero-content p  { animation: fadeUp 0.7s 0.15s ease both; }
+.btn-hero        { animation: fadeUp 0.7s 0.3s ease both; }
